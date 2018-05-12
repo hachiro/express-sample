@@ -10,7 +10,7 @@ pipeline {
       parallel {
         stage('hello') {
           steps {
-            sh 'echo "hello"'
+            sh 'echo "hello" > hello.txt'
           }
         }
         stage('hello2') {
@@ -20,7 +20,7 @@ pipeline {
         }
       }
     }
-    stage('') {
+    stage('error') {
       steps {
         archiveArtifacts 'hello.txt'
       }
