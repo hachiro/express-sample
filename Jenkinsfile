@@ -25,5 +25,10 @@ pipeline {
         archiveArtifacts 'hello.txt'
       }
     }
+    stage('after_hello') {
+      steps {
+        sh 'echo "after hello"'
+      }
+    }
   }
 }
